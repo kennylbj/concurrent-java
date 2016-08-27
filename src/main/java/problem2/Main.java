@@ -1,4 +1,4 @@
-package question2;
+package problem2;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package question1;
+package problem1;
 
 import net.jcip.annotations.GuardedBy;
 
