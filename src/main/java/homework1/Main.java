@@ -10,7 +10,7 @@ import java.util.*;
  * Can you simulate that?
  * Suppose N = 10 && M = 2000 && transaction money is [1,10]
  */
-public class BankMoney {
+public class Main {
     private static final int CUSTOMER_NUM = 10;
     private static final int THRESHOLD = 10;
     private static final int MONEY = 200000;

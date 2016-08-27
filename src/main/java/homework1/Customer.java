@@ -6,13 +6,15 @@ import java.util.Random;
 
 /**
  * Created by kennybjliu on 16/8/27.
+ * A runnable to randomly transfer money to
+ * other account.
  */
 class Customer implements Runnable {
 
     private final Map<Integer, Integer> accounts;
     private final int id;
     private final int threshold;
-    //volatile guarantee the  memory visibility
+    //volatile guarantee the memory visibility
     private volatile boolean stop = false;
     //count the transfer times. single-thread-access guarantee
     private int count;
