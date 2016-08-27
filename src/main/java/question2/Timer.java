@@ -1,4 +1,6 @@
-package homework2;
+package question2;
+
+import net.jcip.annotations.ThreadSafe;
 
 import static com.google.common.base.Preconditions.*;
 
@@ -10,6 +12,7 @@ import java.util.concurrent.PriorityBlockingQueue;
  * Timer is designed to be thread-safe.
  *
  */
+@ThreadSafe
 public class Timer {
     private static final int SECONDS_TO_NANOSECONDS = 1000 * 1000 * 1000;
     //in order to add task from other threads.

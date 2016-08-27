@@ -1,4 +1,6 @@
-package homework1;
+package question1;
+
+import net.jcip.annotations.GuardedBy;
 
 import java.util.ConcurrentModificationException;
 import java.util.Map;
@@ -10,7 +12,7 @@ import java.util.Random;
  * other account.
  */
 class Customer implements Runnable {
-
+    @GuardedBy("accounts")
     private final Map<Integer, Integer> accounts;
     private final int id;
     private final int threshold;
