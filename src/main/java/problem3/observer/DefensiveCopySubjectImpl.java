@@ -40,7 +40,7 @@ public class DefensiveCopySubjectImpl implements Subject {
 
     @Override
     public void postTopic(String topic) {
-        System.out.println("post a topic : " + topic);
+        System.out.println("Post a defensive copy topic : " + topic);
         notifyAllObservers(topic);
     }
 

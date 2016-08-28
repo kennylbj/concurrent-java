@@ -60,8 +60,7 @@ class Customer implements Runnable {
             }
             //transfer a random amount of money [1, threshold]
             int transfer = new Random().nextInt(threshold) + 1;
-            //increase counter
-            count++;
+
             //critical section
             synchronized (accounts) {
                 int from = accounts.get(id);
@@ -74,6 +73,7 @@ class Customer implements Runnable {
                 to += transfer;
                 accounts.put(id, from);
                 accounts.put(pickOne, to);
+                count++;
             }
         }
     }

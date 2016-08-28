@@ -59,14 +59,13 @@ class EffectiveCustomer implements Runnable {
     @Override
     public void run() {
         while (!stop) {
-            //accounts's size is a constant we so don't need to synchronize it
             int size = customers.length;
             int pickOne = new Random().nextInt(size);
             //pick myself
             if (pickOne == id) {
                 continue;
             }
-            count++;
+
             //transfer a random amount of money [1, threshold]
             int transfer = new Random().nextInt(threshold) + 1;
 
@@ -81,6 +80,7 @@ class EffectiveCustomer implements Runnable {
                     }
                     this.money -= transfer;
                     customers[pickOne].money += transfer;
+                    count++;
                 }
             }
         }

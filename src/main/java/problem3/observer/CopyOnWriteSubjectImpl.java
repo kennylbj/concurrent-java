@@ -30,7 +30,7 @@ public class CopyOnWriteSubjectImpl implements Subject {
 
     @Override
     public void postTopic(String topic) {
-        System.out.println("CopyOnWrite subject post a topic : " + topic);
+        System.out.println("Post a CopyOnWrite subject topic : " + topic);
         notifyAllObservers(topic);
     }
 

@@ -5,11 +5,6 @@ import java.util.*;
 
 /**
  * Created by kennylbj on 16/8/27.
- * Suppose we have N customers and each of them
- * has M money. All they will do is to transfer
- * some of it's money to other random customer's account.
- * Can you simulate that?
- * Suppose N = 10 && M = 2000 && transaction money is [1,10]
  */
 public class Main {
     private static final int CUSTOMER_NUM = 10;
@@ -33,7 +28,7 @@ public class Main {
         //start thread
         Arrays.stream(customers).forEach(customer -> new Thread(customer).start());
 
-        //wait a bit of time
+        //wait a little bit of time
         Thread.sleep(SLEEP_TIME);
 
         //stop all threads
