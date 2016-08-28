@@ -1,4 +1,4 @@
-package problem1;
+package problem1.bank;
 
 import net.jcip.annotations.GuardedBy;
 
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Created by kennybjliu on 16/8/27.
+ * Created by kennylbj on 16/8/27.
  * A runnable to randomly transfer money to
  * other account.
  */

@@ -1,4 +1,4 @@
-package problem2;
+package problem2.timer;
 
 import net.jcip.annotations.ThreadSafe;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 /**
- * Created by kennybjliu on 16/8/27.
+ * Created by kennylbj on 16/8/27.
  * Timer is designed to be thread-safe.
  *
  */

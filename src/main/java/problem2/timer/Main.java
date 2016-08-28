@@ -1,9 +1,9 @@
-package problem2;
+package problem2.timer;
 
 import java.time.LocalDateTime;
 
 /**
- * Created by kennybjliu on 16/8/27.
+ * Created by kennylbj on 16/8/27.
  */
 public class Main {
     private static final int COUNT = 10;

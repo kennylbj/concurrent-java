@@ -1,9 +1,11 @@
-package problem1;
+package problem1.bank;
+
+import problem1.bank.Customer;
 
 import java.util.*;
 
 /**
- * Created by kennybjliu on 16/8/27.
+ * Created by kennylbj on 16/8/27.
  * Suppose we have N customers and each of them
  * has M money. All they will do is to transfer
  * some of it's money to other random customer's account.
