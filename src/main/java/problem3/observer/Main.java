@@ -5,12 +5,18 @@ package problem3.observer;
  */
 public class Main {
     public static void main(String[] args) {
-        Subject myTopic = new SubjectImpl();
-        myTopic.register(new ObserverImpl("google", myTopic));
-        myTopic.register(new ObserverImpl("twitter", myTopic));
-        myTopic.register(new ObserverImpl("facebook", myTopic));
+        Subject defensiveCopySubject = new DefensiveCopySubjectImpl();
+        defensiveCopySubject.register(new ObserverImpl("google", defensiveCopySubject));
+        defensiveCopySubject.register(new ObserverImpl("twitter", defensiveCopySubject));
+        defensiveCopySubject.register(new ObserverImpl("facebook", defensiveCopySubject));
 
-        myTopic.postTopic("say a topic");
-        myTopic.postTopic("post another topic");
+        defensiveCopySubject.postTopic("say a topic");
+        defensiveCopySubject.postTopic("post another topic");
+
+        Subject copyOnWriteSubject = new CopyOnWriteSubjectImpl();
+        copyOnWriteSubject.register(new ObserverImpl("yahoo", copyOnWriteSubject));
+        copyOnWriteSubject.register(new ObserverImpl("apple", copyOnWriteSubject));
+        copyOnWriteSubject.postTopic("post a CopyOnWrite topic");
+        copyOnWriteSubject.postTopic("post another anther CopyOnWrite topic");
     }
 }

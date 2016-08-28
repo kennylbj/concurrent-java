@@ -1,6 +1,5 @@
 package problem1.bank;
 
-import problem1.bank.Customer;
 
 import java.util.*;
 
@@ -43,7 +42,7 @@ public class Main {
             customers[i].stop();
         }
 
-        accounts.entrySet().stream().forEach(System.out::println);
+        accounts.entrySet().forEach(System.out::println);
 
         int sum = accounts.values()
                 .stream()

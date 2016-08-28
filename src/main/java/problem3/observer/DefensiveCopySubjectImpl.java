@@ -14,11 +14,11 @@ import java.util.List;
  * CopyOnWrite tech is another way to achieve this.
  */
 @ThreadSafe
-public class SubjectImpl implements Subject{
+public class DefensiveCopySubjectImpl implements Subject {
     @GuardedBy("this")
     private final ArrayList<Observer> observers;
 
-    public SubjectImpl() {
+    public DefensiveCopySubjectImpl() {
         observers = new ArrayList<>();
     }
 
