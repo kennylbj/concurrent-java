@@ -17,7 +17,7 @@ class EffectiveCustomer implements Runnable {
     private final int id;
     private final EffectiveCustomer[] customers;
     private final int threshold;
-
+    private final Random random;
     private volatile boolean stop = false;
     private int count = 0;
     private int poorTimes = 0;
@@ -28,7 +28,7 @@ class EffectiveCustomer implements Runnable {
         this.id = id;
         this.customers = customers;
         this.threshold = threshold;
-
+        this.random = new Random();
     }
 
     int getMoney() {
@@ -60,14 +60,14 @@ class EffectiveCustomer implements Runnable {
     public void run() {
         while (!stop) {
             int size = customers.length;
-            int pickOne = new Random().nextInt(size);
+            int pickOne = random.nextInt(size);
             //pick myself
             if (pickOne == id) {
                 continue;
             }
 
             //transfer a random amount of money [1, threshold]
-            int transfer = new Random().nextInt(threshold) + 1;
+            int transfer = random.nextInt(threshold) + 1;
 
             //synchronize in order to avoid dead lock
             int smaller = Math.min(id, pickOne);

@@ -16,6 +16,7 @@ class Customer implements Runnable {
     private final Map<Integer, Integer> accounts;
     private final int id;
     private final int threshold;
+    private final Random random;
     //volatile guarantee the memory visibility
     private volatile boolean stop = false;
     //count the transfer times. single-thread-access guarantee
@@ -26,6 +27,7 @@ class Customer implements Runnable {
         this.id = id;
         this.accounts = accounts;
         this.threshold = threshold;
+        this.random = new Random();
         this.count = 0;
         this.poorTimes = 0;
     }
@@ -53,13 +55,14 @@ class Customer implements Runnable {
         while (!stop) {
             //accounts's size is a constant we so don't need to synchronize it
             int size = accounts.size();
-            int pickOne = new Random().nextInt(size);
+            int pickOne = random.nextInt(size);
+
             //pick myself
             if (pickOne == id) {
                 continue;
             }
             //transfer a random amount of money [1, threshold]
-            int transfer = new Random().nextInt(threshold) + 1;
+            int transfer = random.nextInt(threshold) + 1;
 
             //critical section
             synchronized (accounts) {
