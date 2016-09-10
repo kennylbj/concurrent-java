@@ -33,7 +33,7 @@ public class SemaphoreConsumer implements IConsumer<Item>, Runnable {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("consume item " + item.toString());
+        System.out.println("[Semaphore] Consumer consumes item " + item.toString());
     }
 
     public void stop() {

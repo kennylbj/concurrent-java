@@ -35,7 +35,7 @@ public class SemaphoreProducer implements IProducer<Item>, Runnable {
             Thread.currentThread().interrupt();
         }
         Item item = Item.generate();
-        System.out.println("produce item " + item.toString());
+        System.out.println("[Semaphore] Producer produces item " + item.toString());
         return item;
     }
 

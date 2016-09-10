@@ -37,7 +37,7 @@ public class ConditionProducer implements IProducer<Item>, Runnable {
             Thread.currentThread().interrupt();
         }
         Item item = Item.generate();
-        System.out.println("Condition Producer produce item " + item.toString());
+        System.out.println("[Condition] Producer produces item " + item.toString());
         return item;
     }
 
