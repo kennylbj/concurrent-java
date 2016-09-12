@@ -17,7 +17,6 @@ public class SemaphoreProducer implements IProducer<Item>, Runnable {
     private final Buffer<Item> buffer;
     private final Semaphore fullCount;
     private final Semaphore emptyCount;
-    private volatile boolean stop = false;
     private final Random random = new Random(System.nanoTime());
 
     public SemaphoreProducer(Buffer<Item> buffer, Semaphore fullCount, Semaphore emptyCount) {
@@ -35,18 +34,15 @@ public class SemaphoreProducer implements IProducer<Item>, Runnable {
             Thread.currentThread().interrupt();
         }
         Item item = Item.generate();
-        System.out.println("[Semaphore] Producer produces item " + item.toString());
+        System.out.println("[Semaphore] Producer produces item " + item.toString()
+                + " by thread " + Thread.currentThread().getId());
         return item;
-    }
-
-    public void stop() {
-        this.stop = true;
     }
 
     @Override
     public void run() {
         try {
-            while (!stop) {
+            while (!Thread.currentThread().isInterrupted()) {
                 Item item = produce();
                 emptyCount.acquire();
                 synchronized (buffer) {

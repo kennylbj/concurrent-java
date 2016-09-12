@@ -8,12 +8,13 @@ import java.util.concurrent.BlockingQueue;
 
 /**
  * Created by kennylbj on 16/9/10.
+ * Consumer implemented by BlockingQueue
  */
 public class BlockingQueueConsumer implements IConsumer<Item>, Runnable {
     private final BlockingQueue<Item> buffer;
     private final Random random = new Random(System.nanoTime());
 
-    public BlockingQueueConsumer(BlockingQueue buffer) {
+    public BlockingQueueConsumer(BlockingQueue<Item> buffer) {
         this.buffer = buffer;
     }
 
@@ -36,6 +37,7 @@ public class BlockingQueueConsumer implements IConsumer<Item>, Runnable {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("[BlockingQueue] Consumer consumes item " + item.toString());
+        System.out.println("[BlockingQueue] Consumer consumes item " + item.toString()
+                + " by thread " + Thread.currentThread().getId());
     }
 }

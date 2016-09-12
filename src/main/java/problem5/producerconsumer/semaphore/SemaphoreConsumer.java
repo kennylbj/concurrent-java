@@ -17,7 +17,6 @@ public class SemaphoreConsumer implements IConsumer<Item>, Runnable {
     private final Buffer<Item> buffer;
     private final Semaphore fullCount;
     private final Semaphore emptyCount;
-    private volatile boolean stop = false;
     private final Random random = new Random(System.nanoTime());
 
     public SemaphoreConsumer(Buffer<Item> buffer, Semaphore fullCount, Semaphore emptyCount) {
@@ -33,17 +32,14 @@ public class SemaphoreConsumer implements IConsumer<Item>, Runnable {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        System.out.println("[Semaphore] Consumer consumes item " + item.toString());
-    }
-
-    public void stop() {
-        this.stop = true;
+        System.out.println("[Semaphore] Consumer consumes item " + item.toString()
+                + " by thread " + Thread.currentThread().getId());
     }
 
     @Override
     public void run() {
         try {
-            while (!stop) {
+            while (!Thread.currentThread().isInterrupted()) {
                 fullCount.acquire();
                 Item item;
                 synchronized (buffer) {

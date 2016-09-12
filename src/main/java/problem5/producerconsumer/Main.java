@@ -18,6 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 1) use Semaphore
  * 2) use Condition
  * 3) use BlockingQueue
+ * All versions support multiple producers and consumers
  */
 public class Main {
     private final static int BUFFER_SIZE = 100;

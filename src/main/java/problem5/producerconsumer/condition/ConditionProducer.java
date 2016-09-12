@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Lock;
 /**
  * Created by kennylbj on 16/9/10.
  * Producer implemented by Condition.
- * Multi producers and consumers can work together.
+ * Using monitors makes race conditions much less likely than when using semaphores.
  */
 public class ConditionProducer implements IProducer<Item>, Runnable {
     @GuardedBy("lock")
@@ -37,7 +37,8 @@ public class ConditionProducer implements IProducer<Item>, Runnable {
             Thread.currentThread().interrupt();
         }
         Item item = Item.generate();
-        System.out.println("[Condition] Producer produces item " + item.toString());
+        System.out.println("[Condition] Producer produces item " + item.toString()
+                + " by thread " + Thread.currentThread().getId());
         return item;
     }
 
