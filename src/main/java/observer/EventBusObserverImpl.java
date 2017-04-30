@@ -4,9 +4,7 @@ import com.google.common.eventbus.Subscribe;
 
 /**
  * Created by kennylbj on 16/8/28.
- * google EventBus version of Observer
- * we can get rid of Observer interface since
- * @Subscribe annotation
+ * Google EventBus version of Observer
  */
 public class EventBusObserverImpl implements Observer {
     private final String observerName;

@@ -15,9 +15,10 @@ public class ObserverImpl implements Observer {
     @Override
     public void onNotify(String topic) {
         System.out.println(observerName + " receive a topic : " + topic);
-        //Unexpected user may call unRegister method in onNotify even
-        //can hold another lock. that's way we need a defencive copy
-        //from Observers
+
+        // Unexpected user may call unRegister method in onNotify even
+        // can hold another lock. that's why we need to do some protection
+        // in Subject
         subject.unRegister(this);
     }
 }

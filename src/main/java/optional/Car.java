@@ -8,7 +8,7 @@ import java.util.Random;
  * A car may or may not have a Hud.
  */
 final class Car {
-    private static final Random random = new Random();
+    private static final Random random = new Random(System.nanoTime());
     private Hud hud;
 
     Car() {

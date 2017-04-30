@@ -8,8 +8,8 @@ import java.util.Random;
 
 /**
  * Created by kennylbj on 16/8/27.
- * A runnable to randomly transfer money to
- * other account.
+ * A runnable to  transfer money to
+ * other account randomly.
  */
 class Customer implements Runnable {
     @GuardedBy("accounts")
@@ -38,14 +38,14 @@ class Customer implements Runnable {
 
     int getCount() {
         if (!stop) {
-            throw new ConcurrentModificationException("can't not access count");
+            throw new ConcurrentModificationException("Can't not access count");
         }
         return count;
     }
 
     int getPoorTimes() {
         if (!stop) {
-            throw new ConcurrentModificationException("can't not access poorTimes");
+            throw new ConcurrentModificationException("Can't not access poorTimes");
         }
         return poorTimes;
     }

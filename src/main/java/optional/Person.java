@@ -8,7 +8,7 @@ import java.util.Random;
  * A Person may or may not have a car.
  */
 public final class Person {
-    private static final Random random = new Random();
+    private static final Random random = new Random(System.nanoTime());
     private Car car;
 
     Person() {

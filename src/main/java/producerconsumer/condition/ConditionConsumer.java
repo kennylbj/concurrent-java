@@ -2,7 +2,7 @@ package producerconsumer.condition;
 
 import net.jcip.annotations.GuardedBy;
 import producerconsumer.Buffer;
-import producerconsumer.IConsumer;
+import producerconsumer.Consumer;
 import producerconsumer.Item;
 
 import java.util.Random;
@@ -13,7 +13,7 @@ import java.util.concurrent.locks.Lock;
  * Created by kennylbj on 16/9/10.
  * Consumer implemented by Condition
  */
-public class ConditionConsumer implements IConsumer<Item>, Runnable {
+public class ConditionConsumer implements Consumer<Item>, Runnable {
     @GuardedBy("lock")
     private final Buffer<Item> buffer;
     private final Lock lock;

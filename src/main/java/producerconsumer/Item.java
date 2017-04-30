@@ -14,7 +14,7 @@ import java.util.UUID;
 public final class Item {
     private final String itemId;
     private final String itemName;
-    private static Random random = new Random(System.nanoTime());
+    private static final Random random = new Random(System.nanoTime());
     private static final String ITEM_NAME[] = {
             "apple",
             "banana",

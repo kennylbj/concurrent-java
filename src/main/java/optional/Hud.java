@@ -8,7 +8,7 @@ import java.util.Random;
  */
 final class Hud {
     private static final String[] optional = {"Benz hud", "BMW hud", "Audi Hud"};
-    private static final Random random = new Random();
+    private static final Random random = new Random(System.nanoTime());
     private final String brand;
 
     Hud() {

@@ -11,8 +11,8 @@ public class Main {
         final Timer timer = new Timer();
 
         final Runnable r = new Runnable() {
-            //count will only be updated in timer's loop() thread
-            //so it doesn't need to be synchronized.
+            // count will only be updated in timer's loop() thread
+            // so it doesn't need to be synchronized.
             private int count = 0;
             @Override
             public void run() {
@@ -26,11 +26,11 @@ public class Main {
             }
         };
         new Thread(() -> {
-            //only this add method will be called outside timer loop
+            // Only this add method will be called outside timer loop
             timer.addTimerEventInSeconds(0, r);
         }).start();
 
-        //start timer loop
+        // Start timer loop
         timer.loop();
 
     }

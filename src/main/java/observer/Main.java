@@ -7,7 +7,6 @@ package observer;
 public class Main {
     public static void main(String[] args) {
         Subject defensiveCopySubject = new DefensiveCopySubjectImpl();
-
         defensiveCopySubject.register(new ObserverImpl("google", defensiveCopySubject));
         defensiveCopySubject.register(new ObserverImpl("twitter", defensiveCopySubject));
         defensiveCopySubject.register(new ObserverImpl("facebook", defensiveCopySubject));

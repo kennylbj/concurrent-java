@@ -33,21 +33,21 @@ class EffectiveCustomer implements Runnable {
 
     int getMoney() {
         if (!stop) {
-            throw new ConcurrentModificationException("can not access count");
+            throw new ConcurrentModificationException("Can not access money");
         }
         return money;
     }
 
     int getCount() {
         if (!stop) {
-            throw new ConcurrentModificationException("can not access count");
+            throw new ConcurrentModificationException("Can not access count");
         }
         return count;
     }
 
     int getPoorTimes () {
         if (!stop) {
-            throw new ConcurrentModificationException("can not access poorTimes");
+            throw new ConcurrentModificationException("Can not access poorTimes");
         }
         return poorTimes;
     }

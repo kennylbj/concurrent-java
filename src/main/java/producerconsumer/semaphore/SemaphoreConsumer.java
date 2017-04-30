@@ -2,7 +2,7 @@ package producerconsumer.semaphore;
 
 import net.jcip.annotations.GuardedBy;
 import producerconsumer.Buffer;
-import producerconsumer.IConsumer;
+import producerconsumer.Consumer;
 import producerconsumer.Item;
 
 import java.util.Random;
@@ -12,7 +12,7 @@ import java.util.concurrent.Semaphore;
  * Created by kennylbj on 16/9/10.
  * Consumer implemented by Semaphore
  */
-public class SemaphoreConsumer implements IConsumer<Item>, Runnable {
+public class SemaphoreConsumer implements Consumer<Item>, Runnable {
     @GuardedBy("buffer")
     private final Buffer<Item> buffer;
     private final Semaphore fullCount;

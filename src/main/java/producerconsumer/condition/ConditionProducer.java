@@ -2,7 +2,7 @@ package producerconsumer.condition;
 
 import net.jcip.annotations.GuardedBy;
 import producerconsumer.Buffer;
-import producerconsumer.IProducer;
+import producerconsumer.Producer;
 import producerconsumer.Item;
 
 import java.util.Random;
@@ -14,7 +14,7 @@ import java.util.concurrent.locks.Lock;
  * Producer implemented by Condition.
  * Using monitors makes race conditions much less likely than when using semaphores.
  */
-public class ConditionProducer implements IProducer<Item>, Runnable {
+public class ConditionProducer implements Producer<Item>, Runnable {
     @GuardedBy("lock")
     private final Buffer<Item> buffer;
     private final Lock lock;

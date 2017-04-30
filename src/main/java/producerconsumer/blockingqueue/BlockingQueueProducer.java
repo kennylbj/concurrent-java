@@ -1,6 +1,6 @@
 package producerconsumer.blockingqueue;
 
-import producerconsumer.IProducer;
+import producerconsumer.Producer;
 import producerconsumer.Item;
 
 import java.util.Random;
@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
  * Created by kennylbj on 16/9/10.
  * Producer implemented by BlockingQueue
  */
-public class BlockingQueueProducer implements IProducer<Item>, Runnable {
+public class BlockingQueueProducer implements Producer<Item>, Runnable {
     private final BlockingQueue<Item> buffer;
     private final Random random = new Random(System.nanoTime());
 
