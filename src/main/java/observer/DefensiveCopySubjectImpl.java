@@ -10,8 +10,7 @@ import java.util.List;
 /**
  * Created by kennylbj on 16/8/28.
  * A thread-safe subject which can post topic to
- * all his observers. It is implemented by defensive-copy.
- * CopyOnWrite tech is another way to achieve this.
+ * all it's observers. It is implemented by defensive-copy tech.
  */
 @ThreadSafe
 public class DefensiveCopySubjectImpl implements Subject {
@@ -50,6 +49,7 @@ public class DefensiveCopySubjectImpl implements Subject {
      * as hold another lock or call unRegister method and so on)
      * @param topic the topic being posted.
      */
+    @SuppressWarnings("unchecked")
     private void notifyAllObservers(String topic) {
         List<Observer> observerCopy;
         synchronized (this) {

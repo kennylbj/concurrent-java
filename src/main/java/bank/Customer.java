@@ -61,7 +61,7 @@ class Customer implements Runnable {
             if (pickOne == id) {
                 continue;
             }
-            //transfer a random amount of money [1, threshold]
+            //transfer a random amount with money [1, threshold]
             int transfer = random.nextInt(threshold) + 1;
 
             //critical section

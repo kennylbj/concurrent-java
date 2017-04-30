@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  * Created by kennylbj on 16/8/28.
- * Obtain lock in order to avoid dead lock.
+ * Obtain lock in sequence order to avoid dead lock.
  */
 @ThreadSafe
 class EffectiveCustomer implements Runnable {

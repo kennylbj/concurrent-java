@@ -1,4 +1,4 @@
-# usage of Optional
+# Usage Of Optional
 Given the following Inheritance relationship:
 1. A person may or may not have a car.
 2. A car may or may not have a Hud.
@@ -6,4 +6,4 @@ Given the following Inheritance relationship:
 
 Find the brand name for given person.
 
-Please represent by Optional model
+Please represent that by Optional model
