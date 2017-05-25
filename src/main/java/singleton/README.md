@@ -25,7 +25,7 @@ It's prefer to implement Singleton using this approach.
 Effective Java suggest to implement singleton using this approach.
 However it may occur some memory-waste issue
 
-##Summary
+## Summary
 Use [LazySingleton](LazySingleton.java) If there is not thread-safe requirement;
 
 Otherwise use [InnerStaticClassSingleton](InnerStaticClassSingleton.java).
