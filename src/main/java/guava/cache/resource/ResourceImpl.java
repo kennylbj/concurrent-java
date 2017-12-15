@@ -7,7 +7,7 @@ public class ResourceImpl implements Resource {
     @Override
     public Resource compute(String key) {
         try {
-            // Sleep about [500, 1500) milliseconds
+            // sleep about [500, 1500) milliseconds
             Thread.sleep(random.nextInt(1000) + 500);
         } catch (InterruptedException e) {
             e.printStackTrace();

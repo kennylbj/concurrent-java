@@ -9,16 +9,16 @@ package guava.cache.resource;
  */
 public interface Resource {
 
-    // Compute a resource from a given key.
-    // The computation could be time consuming.
+    // compute a resource from a given key
+    // the computation could be time consuming
     Resource compute(String key);
 
-    // Release the related resource it hold on.
+    // release the related resource it hold on
     void release();
 
-    // Check whether this resource is valid
+    // check whether this resource is valid
     boolean isValid();
 
-    // Memory usage this resource occupied
+    // memory usage this resource occupied
     int memoryUsage();
 }

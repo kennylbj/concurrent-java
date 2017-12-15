@@ -15,7 +15,8 @@ Each package contains a problem and my solution.
 | 7 | [blockqueue](./src/main/java/blockqueue) | A thread-safety queue | BlockingQueue; conditional variable |
 | 8 | [timer](./src/main/java/timer) | A data structure to execute task at specific time | timer; BlockingQueue |
 | 9 | [eventloop](./src/main/java/eventloop) | An event-driven asynchronous programing model | event loop; non-blocking I/O; NIO |
-|10 | [singleton](./src/main/java/singleton) | Implement of [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern) | singleton pattern; memory model; volatile |
+|10 | [singleton](./src/main/java/singleton) | Implementation of [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern) | singleton pattern; memory model; volatile |
+|11 | [guava](./src/main/java/guava) | [guava](https://github.com/google/guava) example | utilities; collections; caches; concurrency; networking; hashing...|
 
 ## Motivation
 My friend is new to java concurrent programing, so i set up this project to help him to have a better knowledge about how to code in multi-thread 
