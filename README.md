@@ -18,8 +18,9 @@ Each package contains a problem and my solution.
 |10 | [singleton](./src/main/java/singleton) | Implement of [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern) | singleton pattern; memory model; volatile |
 
 ## Motivation
-My friend is new to java concurrent programing, so i set up this project to help him to have a better knowledge about coding in multi-thread 
+My friend is new to java concurrent programing, so i set up this project to help him to have a better knowledge about how to code in multi-thread 
 environment.  
+
 I will continue to post updates.
 
 ## Getting Started
