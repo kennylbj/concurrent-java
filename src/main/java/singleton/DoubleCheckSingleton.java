@@ -4,7 +4,7 @@ import net.jcip.annotations.NotThreadSafe;
 
 /**
  * Created by kennylbj on 2017/5/25.
- * Warning: this implement of singleton is NOT correct!
+ * Warning: this implementation of singleton is NOT correct!
  * It seems that {@code getInstance} method will not block at null-check logic each time
  * if the instance has already be initiated. However, Java memory model can not guarantee
  * the visibility of instance. {@see https://en.wikipedia.org/wiki/Java_memory_model}
@@ -27,7 +27,7 @@ public class DoubleCheckSingleton {
     private DoubleCheckSingleton() {
     }
 
-    public synchronized DoubleCheckSingleton getInstance() {
+    public DoubleCheckSingleton getInstance() {
         if (instance == null) {
             synchronized (DoubleCheckSingleton.class) {
                 if (instance == null) {
