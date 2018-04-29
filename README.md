@@ -1,8 +1,8 @@
 # concurrent-java
-Problems about multi-thread programing in java.
+Multi-threads programing philosophy in java.
 
 ## Summary
-Each package contains a problem and my solution.
+Each package contains some concept-specified questions and my solution.
 
 | # | package | description | concept |
 |---| :-----: | ----------- | ------- |
@@ -19,8 +19,7 @@ Each package contains a problem and my solution.
 |11 | [guava](./src/main/java/guava) | [guava](https://github.com/google/guava) example | utilities; collections; caches; concurrency; networking; hashing...|
 
 ## Motivation
-My friend is new to java concurrent programing, so i set up this project to help him to have a better knowledge about how to code in multi-thread 
-environment.  
+My friend is new to java concurrency programing, so I set up this project to help him to have a better knowledge about how to code in multi-threads environment. This project takes advantage of several awesome books such as ``Java Concurrency in Practice`` , ``Effective Java`` and extracts the most important concept of concurrency programing. What's more, it demonstrates the usage of some popular utils including ``guava`` and ``rxjava``. Feel free to enjoy it.  
 
 I will continue to post updates.
 
